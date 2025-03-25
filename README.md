@@ -77,6 +77,11 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+1. In this project, I think a single Model struct is enough. It is because the Subscriber struct is only used to store the subscriber's information, and the Notification struct is only used to store the notification's information. Therefore, it is not needed to create an interface or trait because we don't need a method that must be implemented by the Subscriber struct or the Notification struct.
+
+2. Using DashMap is necessary because we need to access the data based on the id or url. DashMap is a map that can be accessed by multiple threads at the same time, so it is suitable for this case. If we use Vec, we need to iterate through the Vec to find the data we need, which is less efficient than DashMap.
+
+3. We still need DashMap because the Singleton pattern is not enough to make the program thread-safe. The Singleton pattern only ensures that there is only one instance of a class, but it does not guarantee that the data inside the class is thread-safe. In this case, we need DashMap to ensure that the data inside the SUBSCRIBERS variable is thread-safe.
 
 #### Reflection Publisher-2
 
