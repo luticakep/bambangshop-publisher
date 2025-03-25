@@ -84,5 +84,10 @@ This is the place for you to write reflections:
 3. We still need DashMap because the Singleton pattern is not enough to make the program thread-safe. The Singleton pattern only ensures that there is only one instance of a class, but it does not guarantee that the data inside the class is thread-safe. In this case, we need DashMap to ensure that the data inside the SUBSCRIBERS variable is thread-safe.
 
 #### Reflection Publisher-2
+1. By separating Service and Repository, we can separate the business logic from the data storage. The Service contains the business logic, while the Repository contains the data storage logic. This separation makes the code more modular and easier to maintain. If we put the business logic and data storage logic in the same class, it will violate the SRP because the class will have multiple reasons to change.
+
+2. If we only use the Model, the code complexity for each model will increase. The Model will contain both the data storage logic and the business logic, which violates SRP in SOLID principles. The interactions between each model will also be more complex because the business logic and data storage logic are mixed in the Model. 
+
+3. Postman is a very useful tool for testing APIs. It allows us to send HTTP requests to the server and see the response. Postman also provides a feature to save the requests and responses, so we can reuse them later. This feature is very helpful because we don't need to write the same request multiple times. We can also save the requests and responses in a collection, so we can organize them based on the project or the endpoint. 
 
 #### Reflection Publisher-3
